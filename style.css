@@ -66,11 +66,20 @@ h2 {
   gap: 1.5rem;
 }
 
+/* Project Card */
 .project-card {
   background: #1c1c1c;
   padding: 1.2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffff; /* Static border color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2); /* Enhance shadow on hover */
 }
 
 /* Footer */
