@@ -1,5 +1,5 @@
 <h1 align="center">Assalamu Alaikum 👋, I'm Siam Mehraf</h1>
-<h3 align="center">A passionate frontend developer from Bangladesh</h3>
+<h3 align="center">A passionate developer from Bangladesh</h3>
 
 - 🌱 I’m currently learning **JAVASCRIPT**
 
