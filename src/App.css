@@ -1,6 +1,6 @@
 /* Base Styles */
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Figtree', sans-serif;
   margin: 0;
   padding: 0;
   background: #0f0f0f;
@@ -162,6 +162,7 @@ footer {
 }
 
 .big-bold-text {
+  font-family: 'Figtree', sans-serif;
   font-size: 3rem; /* or any large value */
   font-weight: 800; /* equivalent to extrabold */
   text-align: center;
