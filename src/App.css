@@ -117,6 +117,10 @@ footer {
 
 .cta-buttons {
   margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+  gap: 1rem; /* Adds space between them */
+  justify-content: center;
 }
 
 .btn {
