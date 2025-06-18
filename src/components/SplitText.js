@@ -14,62 +14,70 @@ const SplitText = ({
   from = { opacity: 0, y: 40 },
   to = { opacity: 1, y: 0 },
   textAlign = 'center',
-  interval = 8000, // new prop: how often to re-run the animation (ms)
+  interval = 8000,
 }) => {
   const ref = useRef(null);
   const splitterRef = useRef(null);
   const targetsRef = useRef([]);
   const intervalIdRef = useRef(null);
 
-  const animate = () => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (splitterRef.current) {
-      splitterRef.current.revert();
-    }
-
-    const splitter = new GSAPSplitText(el, {
-      type: splitType,
-      linesClass: 'split-line',
-    });
-
-    splitterRef.current = splitter;
-
-    let targets;
-    switch (splitType) {
-      case 'lines':
-        targets = splitter.lines;
-        break;
-      case 'words':
-        targets = splitter.words;
-        break;
-      case 'words, chars':
-        targets = [...splitter.words, ...splitter.chars];
-        break;
-      default:
-        targets = splitter.chars;
-    }
-
-    targetsRef.current = targets;
-
-    gsap.set(targets, { ...from });
-
-    gsap.to(targets, {
-      ...to,
-      duration,
-      ease,
-      stagger: delay / 1000,
-      force3D: true,
-    });
-  };
-
   useEffect(() => {
-    animate(); // Run immediately
+    const animate = () => {
+      const el = ref.current;
+      if (!el) return;
 
-    intervalIdRef.current = setInterval(() => {
-      animate();
-    }, interval);
+      if (splitterRef.current) {
+        splitterRef.current.revert();
+      }
+
+      const splitter = new GSAPSplitText(el, {
+        type: splitType,
+        linesClass: 'split-line',
+      });
+
+      splitterRef.current = splitter;
+
+      let targets;
+      switch (splitType) {
+        case 'lines':
+          targets = splitter.lines;
+          break;
+        case 'words':
+          targets = splitter.words;
+          break;
+        case 'words, chars':
+          targets = [...splitter.words, ...splitter.chars];
+          break;
+        default:
+          targets = splitter.chars;
+      }
+
+      targetsRef.current = targets;
+
+      // Prevent word breaking
+      if (splitType.includes('chars') || splitType.includes('words')) {
+        splitter.words.forEach((word) => {
+          word.style.whiteSpace = 'nowrap';
+          word.style.display = 'inline-block';
+        });
+      }
+
+      gsap.set(targets, { ...from });
+
+      gsap.to(targets, {
+        ...to,
+        duration,
+        ease,
+        stagger: delay / 1000,
+        force3D: true,
+      });
+    };
+
+    // Run animation immediately
+    animate();
+
+    // Run periodically
+    intervalIdRef.current = setInterval(animate, interval);
 
     return () => {
       clearInterval(intervalIdRef.current);

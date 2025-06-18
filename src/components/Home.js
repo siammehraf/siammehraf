@@ -26,7 +26,7 @@ function Home() {
           delay={80}
           duration={0.6}
           interval={8000} // <-- re-animate every 3 seconds
-          splitType="chars"
+          splitType="words, chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           textAlign="center"
