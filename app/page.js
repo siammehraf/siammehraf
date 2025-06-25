@@ -24,6 +24,19 @@ function HomePage() {
         <h2>Featured Work</h2>
         <div className="project-list">
           <div className="project-card">
+            <h3>Emerald VS Code Theme</h3>
+            <p>
+              A custom Visual Studio Code settings configuration featuring a dark, earthy green theme with smooth editor
+              animations and the JetBrains Mono font for enhanced readability and a cozy coding experience. Includes
+              tailored UI colors, tab styles, sidebar theming, and auto-formatting with Prettier.
+            </p>
+            <p>
+              <a href="https://github.com/siammehraf/emerald-vscode-theme" target="_blank" rel="noreferrer">
+                GitHub Repo
+              </a>
+            </p>
+          </div>
+          <div className="project-card">
             <h3>Amazon Clone</h3>
             <p>Amazon homepage layout using HTML/CSS. A front-end exercise for clean UI replication.</p>
             <p>
