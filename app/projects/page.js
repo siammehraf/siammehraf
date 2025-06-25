@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+  title: 'Siam Mehraf | Projects',
+  description: 'Here are the projects developed by Siam Mehraf',
+};
+
 export default function page() {
   return (
     <main>

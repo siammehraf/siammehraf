@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Siam Mehraf | About',
+  description: 'To know more about Siam Mehraf',
+};
+
 function About() {
   const aboutText =
     "I'm Siam Mehraf, passionate about building things that make a difference. Whether it's coding, writing, or research, I focus on impact and clarity.";

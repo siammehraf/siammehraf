@@ -3,8 +3,9 @@ import './globals.css';
 import { Figtree } from 'next/font/google';
 
 export const metadata = {
-  title: 'Siam Mehraf | Portfolio',
-  description: '',
+  title: 'Siam Mehraf | Creative Developer · Writer · Researcher',
+  description:
+    'Siam Mehraf is a Bangladeshi Author, Screenwriter, Film-Maker and Novelist. He is Known for Chotushkon and Nefartiti.',
 };
 
 const figtree = Figtree({
