@@ -1,4 +1,6 @@
-function Contact() {
+import React from 'react';
+
+export default function Contact() {
   return (
     <main>
       <section id="contact">
@@ -16,4 +18,3 @@ function Contact() {
     </main>
   );
 }
-export default Contact;

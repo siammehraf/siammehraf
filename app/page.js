@@ -1,46 +1,20 @@
-// function Home() {
-//   return (
-//     <header>
-//       <h1>Siam Mehraf</h1>
-//       <p>Creative Developer · Writer · Researcher</p>
-//       <nav>
-//         <a href="/projects">Projects</a>
-//         <a href="/about">About</a>
-//         <a href="/contact">Contact</a>
-//       </nav>
-//     </header>
-//   );
-// }
-// export default Home;
+import Link from 'next/link';
+import SplitTextIntro from './components/SplitTextIntro';
 
-import SplitText from './SplitText';
-import { Link } from 'react-router-dom';
-
-function Home() {
+function HomePage() {
   return (
     <main className="homepage">
       <section className="intro">
-        <SplitText
-          text="Hello, I'm Siam Mehraf"
-          className="big-bold-text"
-          delay={80}
-          duration={0.6}
-          interval={8000} // <-- re-animate every 3 seconds
-          splitType="words, chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          textAlign="center"
-        />
-
+        <SplitTextIntro />
         <p className="tagline">Creative Developer · Writer · Researcher</p>
         <p className="mission">
           I build clean, meaningful digital experiences — from well-crafted code to thoughtful writing and research.
         </p>
         <div className="cta-buttons">
-          <Link to="/projects" className="btn">
+          <Link href="/projects" className="btn">
             View Projects
           </Link>
-          <Link to="/contact" className="btn secondary">
+          <Link href="/contact" className="btn secondary">
             Contact Me
           </Link>
         </div>
@@ -73,4 +47,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

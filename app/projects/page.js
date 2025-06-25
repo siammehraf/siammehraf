@@ -1,4 +1,6 @@
-function Projects() {
+import React from 'react';
+
+export default function page() {
   return (
     <main>
       <section id="projects">
@@ -25,4 +27,3 @@ function Projects() {
     </main>
   );
 }
-export default Projects;
